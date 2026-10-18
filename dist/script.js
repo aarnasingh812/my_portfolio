@@ -40,4 +40,4 @@ document.querySelectorAll('[data-project]').forEach(button=>button.addEventListe
 document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',event=>{const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)dialog.close();});
 let toastTimeout;
-document.querySelector('#contact-button').addEventListener('click',()=>{const toast=document.querySelector('#toast');toast.textContent='Your email and social links will be added when we personalize the portfolio.';toast.classList.add('visible');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>toast.classList.remove('visible'),5000);});
+document.querySelector('#contact-button').addEventListener('click',()=>{const toast=document.querySelector('#toast');toast.textContent='This is a demo contact section. Add your real email to activate direct contact.';toast.classList.add('visible');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>toast.classList.remove('visible'),5000);});
