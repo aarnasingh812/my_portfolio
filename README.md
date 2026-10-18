@@ -1,6 +1,6 @@
 # AI Engineer / Python Developer Portfolio
 
-A responsive, buildless portfolio frame using the requested twilight slate (#12131A), silver-white (#F3F4F6), indigo-gray (#8B8D98), copper (#E26D3B), and charcoal slate (#1A1B24) palette.
+A responsive, buildless portfolio frame using the requested midnight forest (#091310), soft ivory (#ECFDF5), sage gray (#8A9A90), warm brass (#E5C158), and forest surface (#11221B) palette.
 
 ## Preview
 
