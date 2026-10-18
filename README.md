@@ -1,6 +1,6 @@
 # AI Engineer / Python Developer Portfolio
 
-A responsive, buildless portfolio frame using the requested obsidian, silver, slate, cyan, cobalt, and charcoal palette.
+A responsive, buildless portfolio frame using the requested obsidian, silver, slate, cobalt blue, and charcoal palette.
 
 ## Preview
 
