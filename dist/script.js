@@ -1,22 +1,3 @@
-const svgNS = 'http://www.w3.org/2000/svg';
-const layers = [
-  [[88,166],[88,237],[88,308]],
-  [[192,98],[192,175],[192,252],[192,329]],
-  [[302,116],[302,193],[302,270],[302,347]],
-  [[414,172],[414,249]]
-];
-layers.slice(0,-1).forEach((layer,index) => layer.forEach((start, a) => layers[index+1].forEach((end,b) => {
-  const line = document.createElementNS(svgNS,'line');
-  for (const [key,value] of Object.entries({x1:start[0],y1:start[1],x2:end[0],y2:end[1]})) line.setAttribute(key,value);
-  line.setAttribute('class',`network-line${(a+b+index)%3===0?' hot':''}`);
-  document.querySelector('#network-lines').append(line);
-})));
-layers.flat().forEach(([x,y],index) => {
-  const node=document.createElementNS(svgNS,'circle');
-  node.setAttribute('cx',x); node.setAttribute('cy',y); node.setAttribute('r',index%3===0?9:6); node.setAttribute('class','network-node');
-  const core=node.cloneNode();core.setAttribute('r',index%3===0?3:2);core.setAttribute('class','network-core');
-  document.querySelector('#network-nodes').append(node,core);
-});
 const menu=document.querySelector('.menu-toggle');
 const nav=document.querySelector('nav');
 function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation');}
@@ -41,3 +22,4 @@ document.querySelector('.dialog-close').addEventListener('click',()=>dialog.clos
 dialog.addEventListener('click',event=>{const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)dialog.close();});
 let toastTimeout;
 document.querySelector('#contact-button').addEventListener('click',()=>{const toast=document.querySelector('#toast');toast.textContent='This is a demo contact section. Add your real email to activate direct contact.';toast.classList.add('visible');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>toast.classList.remove('visible'),5000);});
+

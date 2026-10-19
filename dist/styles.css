@@ -24,3 +24,14 @@
 .contact-panel{border-color:#E5C15888;background:linear-gradient(135deg,#E5C1581A,#11221B)}
 .contact-panel .sample-disclosure{border-left-color:#E5C15866;background:#E5C15808}
 .contact-expanded .status-dot{background:var(--accent);box-shadow:0 0 10px #E5C15860}
+/* A quiet introduction: name, role, and a slowly drifting light. */
+.hero.hero-minimal{position:relative;isolation:isolate;display:grid;grid-template-columns:1fr;place-items:center;text-align:center;min-height:calc(100svh - 100px);padding-block:100px;overflow:hidden;gap:0}
+.hero-minimal .hero-content{position:relative;z-index:1;max-width:100%;animation:hero-arrive 1s ease-out both}
+.hero-minimal h1{font-size:clamp(52px,9vw,116px);font-weight:500;line-height:1.12;letter-spacing:-.055em;margin:0 0 24px;text-wrap:balance;text-shadow:0 0 60px #b5b9ff18}
+.hero-minimal .hero-role{font-size:clamp(13px,1.65vw,20px);font-weight:400;letter-spacing:.12em;line-height:1.8;text-wrap:balance;color:#ffffffbf}
+.hero-aura{position:absolute;z-index:0;width:min(700px,120vw);aspect-ratio:1;pointer-events:none;background:radial-gradient(ellipse at 40% 40%,#6674df24,transparent 60%),radial-gradient(ellipse at 65% 60%,#b7a16b13,transparent 55%);border-radius:50%;filter:blur(30px);animation:hero-drift 14s ease-in-out infinite alternate}
+.hero-minimal .hero-content::after{content:"";display:block;width:52px;height:1px;margin:34px auto 0;background:linear-gradient(90deg,transparent,#ffffff70,transparent)}
+@keyframes hero-arrive{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes hero-drift{from{transform:translate(-7%,-5%) scale(.95);opacity:.65}to{transform:translate(7%,5%) scale(1.08);opacity:1}}
+@media(max-width:760px){.hero.hero-minimal{min-height:calc(100svh - 80px);padding:70px 24px}.hero-minimal h1{margin-bottom:20px}.hero-minimal .hero-role{letter-spacing:.06em}}
+@media(prefers-reduced-motion:reduce){.hero-minimal .hero-content,.hero-aura{animation:none}}
