@@ -61,6 +61,25 @@ if (githubPanel && 'IntersectionObserver' in window) {
 }
 
 
+// Keep content visible without JS/observer support; reveal each group just once.
+const techStack = document.querySelector('.tech-stack');
+if (techStack && 'IntersectionObserver' in window && !reducedMotion.matches) {
+  const techObserver = new IntersectionObserver(entries => {
+    if (entries.some(entry => entry.isIntersecting)) {
+      techStack.classList.add('is-revealed');
+      techObserver.disconnect();
+    }
+  }, { threshold: 0.12 });
+  techStack.classList.add('reveal-ready');
+  techObserver.observe(techStack);
+  reducedMotion.addEventListener('change', event => {
+    if (event.matches) {
+      techStack.classList.add('is-revealed');
+      techObserver.disconnect();
+    }
+  });
+}
+
 const projectTrack = document.querySelector('#project-track');
 const projectScrollButtons = document.querySelectorAll('[data-project-scroll]');
 if (projectTrack) {
